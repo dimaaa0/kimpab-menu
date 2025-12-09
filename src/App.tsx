@@ -6,6 +6,7 @@ import combo1 from './assets/images/combo1.webp'
 import ramen from './assets/images/ramen.jpg'
 import pibimpab from './assets/images/pibimpab.jpg'
 import tokpoki from './assets/images/tokpoki.webp'
+import xButton from './assets/images/x.svg'
 
 export const App = () => {
 
@@ -140,7 +141,7 @@ export const App = () => {
                     </div>
                 </main >
                 {modal && (
-                    <div className="modal" onClick={handleModal}>
+                    <div className="modal">
                         <div className="modal-content">
                             {menu.filter(item => item.id === Number(modalId)).map(modalItem => (
                                 <div className="modal-content-item" key={modalItem.id}>
@@ -161,6 +162,7 @@ export const App = () => {
                                                 <li className='ingridients-list-item' key={index}>{ingredient}</li>
                                             ))}
                                         </ul>
+                                        <button className='close' onClick={handleModal}>Закрыть</button>
                                     </div>
                                 </div>
                             ))}

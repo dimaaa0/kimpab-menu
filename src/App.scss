@@ -20,6 +20,7 @@
 
 * {
   margin: 0;
+  // border: 1px solid black;
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
@@ -36,7 +37,6 @@
   }
 
   .header {
-    // border-radius: 0 0 10px 10px;
     box-shadow: 0px 4px 26px -11px rgba(66, 68, 90, 0.34);
     display: flex;
     align-items: center;
@@ -81,7 +81,6 @@
         display: flex;
         gap: 22px;
         padding: 30px 20px;
-        // box-shadow: 8px 5px 26px -11px rgba(66, 68, 90, 0.34);
 
         &::-webkit-scrollbar {
           display: none;
@@ -119,8 +118,8 @@
 
         &-item {
           background: #00000010;
-          padding: 18px;
-          height: 360px;
+          padding: 20px;
+          height: auto;
           border-radius: 20px;
 
           .item {
@@ -197,6 +196,18 @@
       padding: 30px;
       border-radius: 10px;
       text-align: center;
+      position: relative;
+
+      .close {
+        width: 100%;
+        margin-top: 20px;
+        padding: 6px;
+        font-family: 'FR';
+        border: 1px solid rgba(0, 0, 0, 0.664);
+        background: white;
+        border-radius: 6px;
+        color: black;
+      }
 
       &-item {
         .item-image {
@@ -239,7 +250,8 @@
           .description {
             display: flex;
             font-family: 'FL';
-            font-size: clamp(16px, 1vw, 18px);
+            font-size: clamp(18px, 1vw, 20px);
+            text-align: start;
             margin-top: 8px;
             line-height: 1.2em;
             max-height: 2.4em;
@@ -253,28 +265,44 @@
             height: 100%;
 
             &-list {
-              display: grid;
-              grid-template-columns: auto auto auto;
-              margin-top: 20px;
+              display: flex;
+              flex-wrap: wrap;
               gap: 16px;
+              margin-top: 20px;
               height: 100%;
 
               &-item {
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                font-family: 'FД';
+                font-family: 'FL';
                 font-size: clamp(16px, 1vw, 18px);
                 margin-bottom: 4px;
                 background: var(--orange-color);
                 border-radius: 50px;
                 color: white;
-                padding: 8px;
+                padding: 8px 12px;
               }
             }
           }
         }
       }
     }
+  }
+}
+
+@media (max-width: 600px) {
+  .main-content-list {
+    grid-template-columns: 1fr !important;
+
+    &-item {
+      padding: 30px 20px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-content {
+    padding: 10px 10px 20px 10px !important;
   }
 }
