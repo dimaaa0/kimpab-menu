@@ -6,11 +6,10 @@ import combo1 from './assets/images/combo1.webp'
 import ramen from './assets/images/ramen.jpg'
 import pibimpab from './assets/images/pibimpab.jpg'
 import tokpoki from './assets/images/tokpoki.webp'
-import xButton from './assets/images/x.svg'
 
 export const App = () => {
 
-    const [menu, setMenu] = useState([
+    const [menu] = useState([
         {
             id: 1,
             name: 'Сет №1',
@@ -60,21 +59,22 @@ export const App = () => {
 
     const [category, setCategory] = useState('Все')
 
-    const handleChangeCategory = (e) => {
-        setCategory(e.target.innerText)
+    const handleChangeCategory = (e: React.MouseEvent<HTMLLIElement>) => {
+        setCategory(e.currentTarget.innerText)
     }
 
-    const handleActiveClass = (e) => {
+    const handleActiveClass = (e: React.MouseEvent<HTMLLIElement>) => {
         const categories = document.querySelectorAll('.categories ul li')
         categories.forEach(cat => cat.classList.remove('active'))
-        e.target.classList.add('active')
+        e.currentTarget.classList.add('active')
+        // Используйте e.currentTarget для консистентности.
     }
 
     const [modal, setModal] = useState(false)
 
     const [modalId, setModalId] = useState(null)
 
-    const handleModal = (id) => {
+    const handleModal = (id?: number) => {
         if (id !== undefined) {
             setModalId(id);
         }

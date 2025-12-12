@@ -231,18 +231,21 @@
             width: 100%;
             display: flex;
             justify-content: space-between;
-            align-items: start;
             gap: 6px;
-            justify-content: space-between;
 
             h2 {
+              display: flex;
+              text-align: start;
+              justify-content: start;
+              align-items: start;
+              width: 100%;
               font-family: 'FB';
               font-size: clamp(24px, 1.2vw, 26px);
             }
 
             .price {
               width: 80px;
-              font-family: 'FB';
+              font-family: 'FR';
               font-size: clamp(26px, 1vw, 28px);
             }
           }
@@ -267,7 +270,7 @@
             &-list {
               display: flex;
               flex-wrap: wrap;
-              gap: 16px;
+              gap: 6px;
               margin-top: 20px;
               height: 100%;
 
@@ -277,7 +280,6 @@
                 justify-content: center;
                 font-family: 'FL';
                 font-size: clamp(16px, 1vw, 18px);
-                margin-bottom: 4px;
                 background: var(--orange-color);
                 border-radius: 50px;
                 color: white;
