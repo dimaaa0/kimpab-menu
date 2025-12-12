@@ -72,7 +72,7 @@ export const App = () => {
 
     const [modal, setModal] = useState(false)
 
-    const [modalId, setModalId] = useState(null)
+    const [modalId, setModalId] = useState<number | null>(null)
 
     const handleModal = (id?: number) => {
         if (id !== undefined) {
@@ -162,7 +162,7 @@ export const App = () => {
                                                 <li className='ingridients-list-item' key={index}>{ingredient}</li>
                                             ))}
                                         </ul>
-                                        <button className='close' onClick={handleModal}>Закрыть</button>
+                                        <button className='close' onClick={() => handleModal()}>Закрыть</button>
                                     </div>
                                 </div>
                             ))}
